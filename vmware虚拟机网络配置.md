@@ -41,6 +41,7 @@
 能ping通外网ip，证明桥接模式设置成功。
 
 那主机与虚拟机之间的通信是否正常呢？我们就用远程工具来测试一下。
+![image](https://user-images.githubusercontent.com/83051290/201335753-5228e948-5242-4054-bbdc-f86a7a252d17.png)
 
 
 
