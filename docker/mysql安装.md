@@ -23,3 +23,19 @@ MYSQL_DATABASE 的作用是 MySQL 容器安装完成可以自动创建一个名�
 7.MySQL 容器自动开启了远程功能，所以只需在使用数据库时，在数据库地址栏填入 公网IP:端口 就能连接到数据库了。
 
 ```
+## 命令安装
+```base
+下载mysql镜像文件:
+　　docker search mysql
+　　docker pull mysql:5.7.32
+创建mysql容器：
+　　docker run -d --name myMysql -p 6666:3306 -v /data/mysql:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=123456 mysql:5.7.32
+　　　　这里第一个6666是主机端口，第二个3306是容器端口，用navicat设6666端口就能连docker中的mysql数据库
+文件挂载：
+　　1、先在主机创建三个目录：mkdir -p my/mysql/conf; mkdir -p my/mysql/data;  mkdir -p my/mysql/logs;
+　　2、docker cp myMysql:/etc/mysql/mysql.conf.d/mysqld.cnf  my/mysql/conf/
+　　3、修改mysqld.cnf文件 vim mysqld.cnf ，然后在最后加character-set-server=utf8，最后保存文件。
+　　4、docker run -d --name myMysql2 -p 6666:3306  -v /my/mysql/conf:/etc/mysql/mysql.conf.d/ -e MYSQL_ROOT_PASSWORD=123456 mysql:5.7.32
+　　5、最后用navicat去连接数据库，端口是6666。
+　　6、这样就可以在数据库里加中文数据。
+```
