@@ -10,3 +10,19 @@ python manage.py runserver 0.0.0.0:80
 ![image](https://user-images.githubusercontent.com/83051290/217498101-42320d0d-a3bf-4736-996b-a35fd108ee16.png)
 * 修改根目录urls.py
 ![image](https://user-images.githubusercontent.com/83051290/217498212-e5a294a9-1e86-4bd2-a572-76eb5107079a.png)
+
+## 数据库
+项目中数据库配置再settings.py
+```base
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'agent_visen1',
+        'USER': 'sd_test',
+        'PASSWORD': 'oIRzvTQi',
+        'HOST': '10.2.0.15',
+        'PORT': '3306',
+        'OPTIONS': {'charset': 'utf8mb4'}
+    }
+}
+```
