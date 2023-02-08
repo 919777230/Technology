@@ -40,4 +40,6 @@ Django里面，数据库操作，包括数据的增删查改，基本上都是�
 如果丢失执行：python manage.py migrate
 可以下载可视化工具查看db.sqlite3
 https://github.com/pawelsalawa/sqlitestudio/releases
+数据库字段类型：
+https://docs.djangoproject.com/en/2.0/ref/models/fields/#model-field-types
 ```
