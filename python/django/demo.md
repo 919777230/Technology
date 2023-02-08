@@ -26,3 +26,14 @@ DATABASES = {
     }
 }
 ```
+
+
+## 其他说明
+### 数据库
+```base
+当前文件，的目录的上级目录：BASE_DIR = Path(__file__).resolve().parent.parent
+![image](https://user-images.githubusercontent.com/83051290/217513153-0dd04886-de07-4e23-a61a-32e27543217d.png)
+如果丢失执行：python manage.py migrate
+可以下载
+如果丢失执行：python manage.py migrate
+```
