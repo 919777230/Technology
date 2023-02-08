@@ -12,6 +12,7 @@ python manage.py runserver 0.0.0.0:80
 ![image](https://user-images.githubusercontent.com/83051290/217498212-e5a294a9-1e86-4bd2-a572-76eb5107079a.png)
 
 ## 数据库
+### 数据库配置
 项目中数据库配置再settings.py
 ```base
 DATABASES = {
@@ -26,7 +27,10 @@ DATABASES = {
     }
 }
 ```
-
+### ORM
+Django里面，数据库操作，包括数据的增删查改，基本上都是通过Model类模型的对象进行的  
+### 练习
+执行：python manage.py startapp common
 
 ## 其他说明
 ### 数据库
