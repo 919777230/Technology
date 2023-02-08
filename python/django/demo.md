@@ -31,6 +31,16 @@ DATABASES = {
 Django里面，数据库操作，包括数据的增删查改，基本上都是通过Model类模型的对象进行的  
 ### 练习
 执行：python manage.py startapp common
+setting.py中注入app：
+INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'common.apps.CommonConfig',
+]
 
 ## 其他说明
 ### 数据库
