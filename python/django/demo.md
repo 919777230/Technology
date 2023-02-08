@@ -5,6 +5,7 @@
 python manage.py runserver 0.0.0.0:80
 
 ## url路由
+更多路由配置：https://docs.djangoproject.com/en/2.1/topics/http/urls/  
 * 项目下创建urls.py 
 ![image](https://user-images.githubusercontent.com/83051290/217498101-42320d0d-a3bf-4736-996b-a35fd108ee16.png)
 * 修改根目录urls.py
