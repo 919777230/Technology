@@ -29,8 +29,12 @@ DATABASES = {
 ```
 ### ORM
 Django里面，数据库操作，包括数据的增删查改，基本上都是通过Model类模型的对象进行的  
-### 练习
+#### 创建common
 执行：python manage.py startapp common
+
+#### 创建数据库表
+创建表命令：python manage.py makemigrations common
+```base
 setting.py中注入app：
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -41,6 +45,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'common.apps.CommonConfig',
 ]
+```
+![image](https://user-images.githubusercontent.com/83051290/217753347-078e92e7-2249-41b5-800e-5466fa8fcee0.png)
+
+
 
 ## 其他说明
 ### 数据库
