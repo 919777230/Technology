@@ -50,7 +50,42 @@ INSTALLED_APPS = [
 ```
 ![image](https://user-images.githubusercontent.com/83051290/217753347-078e92e7-2249-41b5-800e-5466fa8fcee0.png)
 
+### 创建管理员账户
+命令： python manage.py createsuperuser
+![image](https://user-images.githubusercontent.com/83051290/217760586-6b8d5a36-ad72-4859-9c70-86226c6b45e7.png)
+登录管理员账号：http://127.0.0.1:8000/admin/
+自定义表加入到管理账户下：  
+common/admin.py
+```base
+from django.contrib import admin
 
+from .models import Customer
+
+admin.site.register(Customer)
+```
+##  demo
+请求路径: sales/customers
+```base
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('sales/', include('sales.urls')),
+]
+
+def listCustomer(request):
+    # 返回一个QuerySet对象，包含所有的表记录
+    # 每条记录表都是一个dict对象
+    # key是字段名， value是字段值
+    qs = Customer.objects.values()
+
+    # 定义返回字符串
+    retStr = ''
+    for customer in qs:
+        retStr += f'{customer.name}|'
+        # for name, value in customer.items():
+        #     retStr += f'{name} : {value}|'
+        retStr += '<br/>'
+    return HttpResponse(retStr)
+```
 
 ## 其他说明
 ### 数据库
