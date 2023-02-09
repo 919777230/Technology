@@ -86,6 +86,14 @@ def listCustomer(request):
         retStr += '<br/>'
     return HttpResponse(retStr)
 ```
+过滤条件：  
+```base
+qs = Customer.objects.values()
+    phoneNumber = request.GET.get("phoneNumber", None)
+    if phoneNumber:
+        qs = qs.filter(phoneNumber=phoneNumber)
+ ```
+ 
 
 ## 其他说明
 ### 数据库
