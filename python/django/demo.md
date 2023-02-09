@@ -12,6 +12,8 @@ python manage.py runserver 0.0.0.0:80
 ![image](https://user-images.githubusercontent.com/83051290/217498212-e5a294a9-1e86-4bd2-a572-76eb5107079a.png)
 
 ## 数据库
+### 创建数据库
+命令：python manage.py migrate
 ### 数据库配置
 项目中数据库配置再settings.py
 ```base
