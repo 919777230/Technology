@@ -22,4 +22,10 @@ docker run -d \
  ## jenkins运行
  ip:18080
 
+ ## 常见问题
+ 1、组件拉不下来
+ 插件管理-》高级-》站点中的地址替换：
+ http://mirror.esuni.jp/jenkins/updates/update-center.json
+
+
   
