@@ -39,13 +39,13 @@ release:
 
 docker-dev:
 	mvn -Pdev clean package -Dmaven.test.skip=true
-	docker build --build-arg spring_profiles_active=dev -t $(current_dir):$(version) .
-	docker tag $(current_dir):$(version) 172.16.1.10:5000/$(current_dir):$(version)
-	docker push 172.16.1.10:5000/$(current_dir):$(version)
+	docker build --build-arg spring_profiles_active=dev -t $(current_dir):latest .
+	docker tag $(current_dir):latest 172.16.1.10:5000/$(current_dir):latest
+	docker push 172.16.1.10:5000/$(current_dir):latest
 
 docker-prod:
 	mvn -Pprod clean package -Dmaven.test.skip=true
-	docker build --build-arg spring_profiles_active=prod -t $(current_dir):latest .
-	docker tag $(current_dir):latest 172.16.1.10:5000/$(current_dir):latest
-	docker push 172.16.1.10:5000/$(current_dir):latest
+	docker build --build-arg spring_profiles_active=prod -t $(current_dir):$(version) .
+	docker tag $(current_dir):$(version) 172.16.1.10:5000/$(current_dir):$(version)
+	docker push 172.16.1.10:5000/$(current_dir):$(version)
 ```
